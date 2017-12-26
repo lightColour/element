@@ -69,6 +69,7 @@ import Header from '../packages/header/index.js';
 import Aside from '../packages/aside/index.js';
 import Main from '../packages/main/index.js';
 import Footer from '../packages/footer/index.js';
+import SelectDatePicker from '../bb-packages/select-date-picker/index.js';
 import locale from 'element-ui/src/locale';
 import CollapseTransition from 'element-ui/src/transitions/collapse-transition';
 
@@ -138,6 +139,7 @@ const components = [
   Aside,
   Main,
   Footer,
+  SelectDatePicker,
   CollapseTransition
 ];
 
@@ -244,7 +246,8 @@ module.exports = {
   Header,
   Aside,
   Main,
-  Footer
+  Footer,
+  SelectDatePicker
 };
 
 module.exports.default = module.exports;
