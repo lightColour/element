@@ -5,6 +5,7 @@ var Components = require('../components.json');
 var saladConfig = require('./salad.config.json');
 
 var utilsList = fs.readdirSync(path.resolve(__dirname, '../src/utils'));
+var bbUtilsList = fs.readdirSync(path.resolve(__dirname, '../src/bb-utils'));
 var mixinsList = fs.readdirSync(path.resolve(__dirname, '../src/mixins'));
 var transitionList = fs.readdirSync(path.resolve(__dirname, '../src/transitions'));
 var externals = {};
@@ -17,6 +18,10 @@ externals['element-ui/src/locale'] = 'element-ui/lib/locale';
 utilsList.forEach(function(file) {
   file = path.basename(file, '.js');
   externals[`element-ui/src/utils/${file}`] = `element-ui/lib/utils/${file}`;
+});
+bbUtilsList.forEach(function(file) {
+  file = path.basename(file, '.js');
+  externals[`element-ui/src/bb-utils/${file}`] = `element-ui/lib/bb-utils/${file}`;
 });
 mixinsList.forEach(function(file) {
   file = path.basename(file, '.js');

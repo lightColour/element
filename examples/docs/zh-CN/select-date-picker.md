@@ -8,6 +8,7 @@
         date2: '',
         date3: '',
         date4: '',
+        data5: '',
         placeholder: '请选择',
         options: [{
           value: '14',
@@ -61,8 +62,8 @@
       }
     },
     methods: {
-      hello() {
-        alert('Hello World!');
+      handleChange(value) {
+        console.log(value);
       }
     }
   }
@@ -145,9 +146,9 @@
 ```
 :::
 
-### 当前月份在左边
+### 当前月份在右边
 
-日期选择下拉面板，当前月份在左边
+日期选择下拉面板，当前月份在右边
 但仍存在一个问题 [issues](https://github.com/ElemeFE/element/issues/3241)
 
 :::demo
@@ -189,7 +190,7 @@
 
 ### 不同尺寸
 
-SelectDatePicker 组件提供除了默认值以外的三种尺寸
+SelectDatePicker 组件提供除了默认值以外的三种尺寸（medium、small 和 mini）
 
 :::demo 可通过 `size` 属性指定输入框的尺寸，除了默认的大小外，还提供了 medium、small 和 mini 三种尺寸。
 ```html
@@ -224,6 +225,44 @@ SelectDatePicker 组件提供除了默认值以外的三种尺寸
         date3: '',
         date4: ''
       };
+    }
+  }
+</script>
+```
+:::
+
+### 事件
+
+SelectDatePicker 组件提供除了默认值以外的三种尺寸
+
+:::demo 可通过 `size` 属性指定输入框的尺寸，除了默认的大小外，还提供了 medium、small 和 mini 三种尺寸。
+```html
+<template>
+  <bb-select-date-picker
+    v-model="date2"
+    :options="options"
+    @change="handleChange"></bb-select-date-picker>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        date1: 'cycle',
+        options: [{
+          value: '14',
+          label: '发布后14天'
+        }, {
+          value: 'cycle',
+          label: '发布周期'
+        }],
+        date5: ''
+      };
+    },
+    methods: {
+      handleChange(value) {
+        console.log(value);
+      }
     }
   }
 </script>

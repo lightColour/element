@@ -1,6 +1,6 @@
 <template>
   <div class="bb-select-date-picker" :style="`width: ${width}`">
-    <el-select v-model="select" placeholder="请选择" :size="size" class="select" @change="handleChange">
+    <el-select v-model="select" :placeholder="placeholder" :size="size" class="select" @change="handleChange">
       <el-option
         v-for="item in options"
         :key="item.value"
@@ -28,6 +28,7 @@
 <script>
 import ElSelect from 'element-ui/packages/select';
 import ElDatePicker from 'element-ui/packages/date-picker';
+import { test } from 'element-ui/src/bb-utils/util';
 
 export default {
   name: 'BbSelectDatePicker',
@@ -68,6 +69,10 @@ export default {
       type: String,
       default: ' ~ '
     },
+    placeholder: {
+      type: String,
+      default: ''
+    },
     pickerOptions: {
       type: Object,
       default() {
@@ -87,6 +92,7 @@ export default {
   },
   methods: {
     datechange(date) {
+      test();
       if (date !== '' && JSON.stringify(date) !== JSON.stringify(this.olddate)) {
         this.select = date.join(this.separator);
         this.olddate = date;
@@ -103,9 +109,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.bb-select-date-picker{display: inline-block;position: relative;}
-.bb-select-date-picker .select{width: 100%;padding-right: 40px;box-sizing: border-box;}
-.bb-select-date-picker .btn-datepicker{width: 38px;overflow: hidden;cursor: pointer;position: absolute;top: 0;right: 0;}
-</style>
