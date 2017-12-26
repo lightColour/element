@@ -71,7 +71,7 @@ export default {
     pickerOptions: {
       type: Object,
       default() {
-        return [];
+        return {};
       }
     },
     defaultValue: {
@@ -106,6 +106,6 @@ export default {
 
 <style scoped>
 .bb-select-date-picker{display: inline-block;position: relative;}
-.select{width: 100%;padding-right: 40px;box-sizing: border-box;}
-.btn-datepicker{width: 38px;overflow: hidden;cursor: pointer;position: absolute;top: 0;right: 0;}
+.bb-select-date-picker .select{width: 100%;padding-right: 40px;box-sizing: border-box;}
+.bb-select-date-picker .btn-datepicker{width: 38px;overflow: hidden;cursor: pointer;position: absolute;top: 0;right: 0;}
 </style>

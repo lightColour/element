@@ -51,6 +51,15 @@
         }
       };
     },
+    computed: {
+      defaultValue() {
+        const currentMonth = new Date();
+        currentMonth.setDate(1);
+        const lastMonth = new Date(currentMonth.getTime());
+        lastMonth.setMonth(lastMonth.getMonth() - 1);
+        return [lastMonth, currentMonth];
+      }
+    },
     methods: {
       hello() {
         alert('Hello World!');
