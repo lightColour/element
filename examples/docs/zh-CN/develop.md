@@ -38,7 +38,9 @@ npm run dist
 
 #### 1. 参考组件开发规范，在相应的目录下编写组件代码
 #### 2. 编写组件说明文档、示例
-#### 3. 在@/components.json中添加组件名和路径
-#### 4. 运行 npm run dist --打包项目代码
-#### 5. 运行 npm run deploy --生成项目文档
-#### 6. 合并项目到master分支，推送到git上
+#### 3. 在components.json中添加组件名和路径
+#### 4. src/index.js中引用组件
+#### 5. 在examples/nav.config.json中添加路由
+#### 6. 运行 npm run dist --打包项目代码
+#### 7. 运行 npm run deploy --生成项目文档
+#### 8. 合并项目到master分支，推送到git上

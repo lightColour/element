@@ -4,9 +4,11 @@ var Components = require('../../components.json');
 var themes = [
   'theme-chalk'
 ];
+// 新增变量，用于存储组件路径
 var ComponentsPath = Object.values(Components);
 Components = Object.keys(Components);
 var basepath = path.resolve(__dirname, '../../packages/');
+// 新增变量，扩展组件的目录
 var bbBasepath = path.resolve(__dirname, '../../bb-packages/');
 
 function fileExists(filePath) {
@@ -20,6 +22,7 @@ function fileExists(filePath) {
 themes.forEach((theme) => {
   var isSCSS = theme !== 'theme-default';
   var indexContent = isSCSS ? '@import "./base.scss";\n' : '@import "./base.css";\n';
+  // 新增参数 index
   Components.forEach(function(key, index) {
     if (['icon', 'option', 'option-group'].indexOf(key) > -1) return;
     var fileName = key + (isSCSS ? '.scss' : '.css');
