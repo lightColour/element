@@ -65,18 +65,19 @@ module.exports.default = module.exports;
 
 delete Components.font;
 
-// ComponentNames、ComponentPath这两个顺序会一一对应吗
 var ComponentNames = Object.keys(Components);
+// 新增变量，存储组件路径
 var ComponentPath = Object.values(Components);
 
 var includeComponentTemplate = [];
 var installTemplate = [];
 var listTemplate = [];
 
+// 新增参数 index 
 ComponentNames.forEach((name, index) => {
   var componentName = uppercamelcase(name);
 
-  // 包含bb-packages路径的为bbplus增加的组件
+  // 增加条件判断，包含bb-packages路径的为bbplus增加的组件
   includeComponentTemplate.push(render(ComponentPath[index].search('bb-packages') > -1 ? IMPORT_TEMPLATE_BBPLUS : IMPORT_TEMPLATE, {
     name: componentName,
     package: name

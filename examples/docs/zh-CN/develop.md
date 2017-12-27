@@ -26,51 +26,19 @@ npm run dev
 npm run dist
 ```
 
-### CDN
-目前可以通过 [unpkg.com/element-ui](https://unpkg.com/element-ui/) 获取到最新版本的资源，在页面上引入 js 和 css 文件即可开始使用。
+### 组件开发规范
+| 目录 | 说明 |
+|---------- |-------- |
+| bb-packages | 团队组件存放目录 |
+| bb-packages/bb-theme-chalk/src | 团队组件样式目录 |
+| src/bb-utils | 团队工具函数存放目录 |
+| examples/docs/zh-CN | 组件文档、实例目录 |
 
-```html
-<!-- 引入样式 -->
-<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-<!-- 引入组件库 -->
-<script src="https://unpkg.com/element-ui/lib/index.js"></script>
-```
+### 组件开发流程
 
-:::tip
-我们建议使用 CDN 引入 Element 的用户在链接地址上锁定版本，以免将来 Element 升级时受到非兼容性更新的影响。锁定版本的方法请查看 [unpkg.com](https://unpkg.com)。
-:::
-
-### Hello world
-通过 CDN 的方式我们可以很容易地使用 Element 写出一个 Hello world 页面。[在线演示](https://jsfiddle.net/hzfpyvg6/14/)
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <!-- 引入样式 -->
-  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-</head>
-<body>
-  <div id="app">
-    <el-button @click="visible = true">按钮</el-button>
-    <el-dialog :visible.sync="visible" title="Hello world">
-      <p>欢迎使用 Element</p>
-    </el-dialog>
-  </div>
-</body>
-  <!-- 先引入 Vue -->
-  <script src="https://unpkg.com/vue/dist/vue.js"></script>
-  <!-- 引入组件库 -->
-  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
-  <script>
-    new Vue({
-      el: '#app',
-      data: function() {
-        return { visible: false }
-      }
-    })
-  </script>
-</html>
-```
-如果是通过 npm 安装，并希望配合 webpack 使用，请阅读下一节：快速上手。
+#### 1. 参考组件开发规范，在相应的目录下编写组件代码
+#### 2. 编写组件说明文档、示例
+#### 3. 在@/components.json中添加组件名和路径
+#### 4. 运行 npm run dist --打包项目代码
+#### 5. 运行 npm run deploy --生成项目文档
+#### 6. 合并项目到master分支，推送到git上

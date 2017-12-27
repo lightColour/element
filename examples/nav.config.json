@@ -34,10 +34,19 @@
         {
           "path": "/transition",
           "name": "内置过渡动画"
-        },
+        }
+      ]
+    },
+    {
+      "name": "组件开发指南",
+      "children": [
         {
           "path": "/develop",
           "name": "组件开发指南"
+        },
+        {
+          "path": "/different",
+          "name": "修改的配置"
         }
       ]
     },

@@ -5,6 +5,7 @@ var Components = require('../components.json');
 var saladConfig = require('./salad.config.json');
 
 var utilsList = fs.readdirSync(path.resolve(__dirname, '../src/utils'));
+// 新增/src/bb-utils目录
 var bbUtilsList = fs.readdirSync(path.resolve(__dirname, '../src/bb-utils'));
 var mixinsList = fs.readdirSync(path.resolve(__dirname, '../src/mixins'));
 var transitionList = fs.readdirSync(path.resolve(__dirname, '../src/transitions'));
@@ -19,6 +20,7 @@ utilsList.forEach(function(file) {
   file = path.basename(file, '.js');
   externals[`element-ui/src/utils/${file}`] = `element-ui/lib/utils/${file}`;
 });
+// 将/src/bb-utils目录打包到/lib/bb-utils
 bbUtilsList.forEach(function(file) {
   file = path.basename(file, '.js');
   externals[`element-ui/src/bb-utils/${file}`] = `element-ui/lib/bb-utils/${file}`;
