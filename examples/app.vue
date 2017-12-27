@@ -219,7 +219,7 @@
     watch: {
       lang(val) {
         if (val === 'zh-CN') {
-          this.suggestJump();
+          // this.suggestJump();
         }
         localize(val);
       }
